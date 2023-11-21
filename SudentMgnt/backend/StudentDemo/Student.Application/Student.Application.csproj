@@ -7,12 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\RepositoryInterfaces\" />
     <Folder Include="Dtos\" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Student.Domin\Student.Domin.csproj" />
     <ProjectReference Include="..\Student.Entities\Student.Entities.csproj" />
   </ItemGroup>
 

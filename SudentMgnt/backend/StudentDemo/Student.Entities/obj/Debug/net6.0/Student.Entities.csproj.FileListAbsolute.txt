@@ -1,0 +1,11 @@
+C:\Users\sam\Desktop\FullStackDevelopment\SudentMgnt\backend\StudentDemo\Student.Entities\bin\Debug\net6.0\Student.Entities.deps.json
+C:\Users\sam\Desktop\FullStackDevelopment\SudentMgnt\backend\StudentDemo\Student.Entities\bin\Debug\net6.0\Student.Entities.dll
+C:\Users\sam\Desktop\FullStackDevelopment\SudentMgnt\backend\StudentDemo\Student.Entities\bin\Debug\net6.0\Student.Entities.pdb
+C:\Users\sam\Desktop\FullStackDevelopment\SudentMgnt\backend\StudentDemo\Student.Entities\obj\Debug\net6.0\Student.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sam\Desktop\FullStackDevelopment\SudentMgnt\backend\StudentDemo\Student.Entities\obj\Debug\net6.0\Student.Entities.AssemblyInfoInputs.cache
+C:\Users\sam\Desktop\FullStackDevelopment\SudentMgnt\backend\StudentDemo\Student.Entities\obj\Debug\net6.0\Student.Entities.AssemblyInfo.cs
+C:\Users\sam\Desktop\FullStackDevelopment\SudentMgnt\backend\StudentDemo\Student.Entities\obj\Debug\net6.0\Student.Entities.csproj.CoreCompileInputs.cache
+C:\Users\sam\Desktop\FullStackDevelopment\SudentMgnt\backend\StudentDemo\Student.Entities\obj\Debug\net6.0\Student.Entities.dll
+C:\Users\sam\Desktop\FullStackDevelopment\SudentMgnt\backend\StudentDemo\Student.Entities\obj\Debug\net6.0\refint\Student.Entities.dll
+C:\Users\sam\Desktop\FullStackDevelopment\SudentMgnt\backend\StudentDemo\Student.Entities\obj\Debug\net6.0\Student.Entities.pdb
+C:\Users\sam\Desktop\FullStackDevelopment\SudentMgnt\backend\StudentDemo\Student.Entities\obj\Debug\net6.0\ref\Student.Entities.dll

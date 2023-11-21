@@ -783,6 +783,19 @@
           }
         }
       },
+      "Student.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Student.Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Student.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Student.Application.dll": {}
+        }
+      },
       "Student.Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -2014,6 +2027,11 @@
         "version.txt"
       ]
     },
+    "Student.Application/1.0.0": {
+      "type": "project",
+      "path": "../Student.Application/Student.Application.csproj",
+      "msbuildProject": "../Student.Application/Student.Application.csproj"
+    },
     "Student.Entities/1.0.0": {
       "type": "project",
       "path": "../Student.Entities/Student.Entities.csproj",
@@ -2025,6 +2043,7 @@
       "Microsoft.EntityFrameworkCore >= 6.0.24",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.24",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.24",
+      "Student.Application >= 1.0.0",
       "Student.Entities >= 1.0.0"
     ]
   },
@@ -2055,6 +2074,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "C:\\Users\\sam\\Desktop\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Application\\Student.Application.csproj": {
+              "projectPath": "C:\\Users\\sam\\Desktop\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Application\\Student.Application.csproj"
+            },
             "C:\\Users\\sam\\Desktop\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Entities\\Student.Entities.csproj": {
               "projectPath": "C:\\Users\\sam\\Desktop\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Entities\\Student.Entities.csproj"
             }
