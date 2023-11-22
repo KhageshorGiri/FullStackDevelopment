@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Student.Application.AutoMapper;
 using Student.Application.Interfaces.RepositoryInterfaces;
 using Student.Application.Interfaces.ServiceInterfaces;
 using Student.Application.Services;
@@ -18,6 +19,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 
 // Register Service
 builder.Services.AddScoped<IStudent, StudentService>();
