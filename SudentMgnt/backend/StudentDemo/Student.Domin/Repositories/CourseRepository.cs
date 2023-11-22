@@ -3,7 +3,7 @@ using Student.Entities.Entities;
 
 namespace Student.Domin.Repositories
 {
-    internal class CourseRepository : ICourseRepository
+    public class CourseRepository : ICourseRepository
     {
         public Task AddCourseAsync(Courses course)
         {

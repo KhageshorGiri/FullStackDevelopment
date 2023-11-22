@@ -2,7 +2,7 @@
 
 namespace Student.Application.Interfaces.ServiceInterfaces
 {
-    public interface IStudentRepository
+    public interface IStudent
     {
         Task<List<Students>> GetAllStudentsAsync();
         Task<Students> GetStudentByIdAsync(Guid Id);

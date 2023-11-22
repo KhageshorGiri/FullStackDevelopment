@@ -3,7 +3,7 @@ using Student.Entities.Entities;
 
 namespace Student.Application.Services
 {
-    public class StudentService : IStudentRepository
+    public class StudentService : IStudent
     {
         public Task AddStudentAsync(Students student)
         {
