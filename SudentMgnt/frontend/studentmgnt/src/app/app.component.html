@@ -1,5 +1,9 @@
-<h1 class="text-3xl font-bold">
-  Hello world!
-</h1>
-
-<button mat-raised-button color="primary">Primary</button>
+<mat-drawer-container class="flex h-screen">
+    <mat-drawer #drawer mode="side" [opened]="sideBarOpen" class="bg-gray-800" style="min-width: 250px;">
+        <app-sidebar></app-sidebar>
+    </mat-drawer>
+    <mat-drawer-content class="flex flex-col w-full">
+        <app-header (toggleSidebarForMe)="sideBarToggler()"></app-header>
+        <router-outlet class="flex-1 overflow-y-auto p-4"></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>
