@@ -65,6 +65,10 @@
               "target": "Package",
               "version": "[6.0.25, )"
             },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[6.1.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"
@@ -142,6 +146,10 @@
               "version": "[12.0.1, )"
             },
             "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.Logging.Abstractions": {
               "target": "Package",
               "version": "[6.0.0, )"
             }

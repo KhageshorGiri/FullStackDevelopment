@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 using Student.Application;
 using Student.Application.Interfaces.RepositoryInterfaces;
 using Student.Application.Interfaces.ServiceInterfaces;
@@ -6,55 +7,56 @@ using Student.Application.Services;
 using Student.Domin.DataContext;
 using Student.Domin.Repositories;
 
-internal class Program
+var builder = WebApplication.CreateBuilder(args);
+
+var logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(builder.Configuration)
+    .Enrich.FromLogContext()
+    .CreateLogger();
+
+try
 {
-    private static void Main(string[] args)
+    Log.Information("Starting web application");
+
+    builder.Logging.ClearProviders();
+    builder.Logging.AddSerilog(logger);
+
+    // Adding db configuration
+    builder.Services.AddDbContext<StudentDbContext>(options =>
     {
-        var builder = WebApplication.CreateBuilder(args);
+        options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
+    });
 
-        // adding db configuration
-        builder.Services.AddDbContext<StudentDbContext>(options =>
-        {
-            options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
-        });
+    builder.Services.AddControllers();
+    builder.Services.AddEndpointsApiExplorer();
+    builder.Services.AddSwaggerGen();
+    builder.Services.AddApplication();
 
-        // Add services to the container.
+    // Register Services
+    builder.Services.AddScoped<IStudent, StudentService>();
+    builder.Services.AddScoped<ICourse, CourseService>();
+    builder.Services.AddScoped<IStudentRepository, StudentRepository>();
+    builder.Services.AddScoped<ICourseRepository, CourseRepository>();
 
-        builder.Services.AddControllers();
-        // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-        builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddSwaggerGen();
-        builder.Services.AddApplication();
+    var app = builder.Build();
 
-        try
-        {
-
-
-            // Register Service
-            builder.Services.AddScoped<IStudent, StudentService>();
-            builder.Services.AddScoped<ICourse, CourseService>();
-            builder.Services.AddScoped<IStudentRepository, StudentRepository>();
-            builder.Services.AddScoped<ICourseRepository, CourseRepository>();
-
-            var app = builder.Build();
-            // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
-
-            app.UseHttpsRedirection();
-
-            app.UseAuthorization();
-
-            app.MapControllers();
-
-            app.Run();
-        }
-        catch (Exception ex)
-        {
-            string message = ex.Message;
-        }
+    if (app.Environment.IsDevelopment())
+    {
+        app.UseSwagger();
+        app.UseSwaggerUI();
     }
+
+    app.UseHttpsRedirection();
+    app.UseAuthorization();
+    app.MapControllers();
+
+    app.Run();
+}
+catch(Exception ex)
+{
+    Log.Fatal(ex, "Application terminated unexpectedly");
+}
+finally
+{
+    Log.CloseAndFlush();
 }

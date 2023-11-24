@@ -11,16 +11,19 @@ namespace Student.API.Controllers
     public class StudentController : ControllerBase
     {
         private readonly IStudent studentService;
+        private readonly ILogger _logger;
 
-        public StudentController(IStudent student)
+        public StudentController(IStudent student, ILogger logger)
         {
             studentService = student;
+            _logger = logger;
         }
 
         // GET: api/<StudentController>
         [HttpGet]
         public async Task<IEnumerable<StudentDto>> Get()
         {
+            _logger.LogInformation("Student Contrller,");
             var response = await studentService.GetAllStudentsAsync();
             return response.ToList();
         }

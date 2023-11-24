@@ -2,7 +2,6 @@
 using Student.Application.Dtos;
 using Student.Application.Interfaces.RepositoryInterfaces;
 using Student.Application.Interfaces.ServiceInterfaces;
-using Student.Entities.Entities;
 
 namespace Student.Application.Services
 {
