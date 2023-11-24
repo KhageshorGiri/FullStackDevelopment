@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Serilog;
+using Student.API.Middleware;
 using Student.Application;
 using Student.Application.Interfaces.RepositoryInterfaces;
 using Student.Application.Interfaces.ServiceInterfaces;
@@ -39,6 +40,8 @@ try
     builder.Services.AddScoped<ICourseRepository, CourseRepository>();
 
     var app = builder.Build();
+
+    app.UseMiddleware<GlobalExceptionHabdelerMiddleware>();
 
     if (app.Environment.IsDevelopment())
     {
