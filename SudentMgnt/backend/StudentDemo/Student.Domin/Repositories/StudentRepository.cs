@@ -17,7 +17,25 @@ namespace Student.Domin.Repositories
 
         public Task<List<Students>> GetAllStudentsAsync()
         {
-            throw new NotImplementedException();
+
+            // Create a list of Student with temporary data
+            List<Students> studentList = new List<Students>
+                {
+                    new Students
+                    {
+                        StudentId = Guid.NewGuid(),
+                        FullName = "John Doe",
+                        Faculty = "Computer Science"
+                    },
+                    new Students
+                    {
+                        StudentId = Guid.NewGuid(),
+                        FullName = "Jane Doe",
+                        Faculty = "Mathematics"
+                    },
+                    // Add more students as needed
+                };
+            return Task.FromResult(studentList);
         }
 
         public Task<Students> GetStudentByIdAsync(Guid Id)

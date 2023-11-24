@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Student.Application.Dtos;
+using Student.Application.Interfaces.ServiceInterfaces;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,11 +10,22 @@ namespace Student.API.Controllers
     [ApiController]
     public class StudentController : ControllerBase
     {
+        private readonly IStudent studentService;
+        private readonly ILogger _logger;
+
+        public StudentController(IStudent student, ILogger logger)
+        {
+            studentService = student;
+            _logger = logger;
+        }
+
         // GET: api/<StudentController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IEnumerable<StudentDto>> Get()
         {
-            return new string[] { "value1", "value2" };
+            _logger.LogInformation("Student Contrller,");
+            var response = await studentService.GetAllStudentsAsync();
+            return response.ToList();
         }
 
         // GET api/<StudentController>/5

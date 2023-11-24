@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Student.Application.Interfaces.ServiceInterfaces;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,6 +9,13 @@ namespace Student.API.Controllers
     [ApiController]
     public class CourseController : ControllerBase
     {
+        private readonly ICourse courseService;
+
+        public CourseController(ICourse course)
+        {
+            this.courseService = course;
+        }
+
         // GET: api/<CourseController>
         [HttpGet]
         public IEnumerable<string> Get()

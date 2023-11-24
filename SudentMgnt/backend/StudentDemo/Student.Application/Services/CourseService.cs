@@ -1,11 +1,12 @@
-﻿using Student.Application.Interfaces.ServiceInterfaces;
+﻿using Student.Application.Dtos;
+using Student.Application.Interfaces.ServiceInterfaces;
 using Student.Entities.Entities;
 
 namespace Student.Application.Services
 {
     public class CourseService : ICourse
     {
-        public Task AddCourseAsync(Courses course)
+        public Task AddCourseAsync(CreateCourseDto course)
         {
             throw new NotImplementedException();
         }
@@ -15,17 +16,17 @@ namespace Student.Application.Services
             throw new NotImplementedException();
         }
 
-        public Task<List<Students>> GetAllCOursesAsync()
+        public Task<List<CourseDto>> GetAllCOursesAsync()
         {
             throw new NotImplementedException();
         }
 
-        public Task<Students> GetCourseByIdAsync(Guid Id)
+        public Task<CourseDto> GetCourseByIdAsync(Guid Id)
         {
             throw new NotImplementedException();
         }
 
-        public Task UpdateCourseAsync(Courses course)
+        public Task UpdateCourseAsync(UpdateCourseDto course)
         {
             throw new NotImplementedException();
         }
