@@ -1,0 +1,14 @@
+<mat-toolbar color="primary" class="mat-elevation-z8">
+  <button mat-icon-button>
+      <mat-icon>menu</mat-icon>
+  </button>
+  <span>Student Management System</span>
+  <span class="example-spacer"></span>
+  <button routerLink="" routerLinkActive="active-link" ariaCurrentWhenActive="page" mat-button>Home</button>
+  <button routerLink="/students" routerLinkActive="active-link" ariaCurrentWhenActive="page" mat-button>Students</button>
+  <button routerLink="" routerLinkActive="active-link" ariaCurrentWhenActive="page" mat-button>Courses</button>
+  <!-- <a href="#" mat-raised-button color="accent">Join Us</a> -->
+  <button (click)="badgevisibility()"  mat-icon-button>
+      <mat-icon matBadgeColor="accent" matBadge="15"  matBadgeSize="small">notifications</mat-icon>
+  </button>
+</mat-toolbar>

@@ -23,9 +23,11 @@ namespace Student.API.Controllers
         [HttpGet]
         public async Task<IEnumerable<StudentDto>> Get()
         {
-            _logger.LogInformation("Student Contrller,");
+            throw new NotImplementedException();
+
+           /* _logger.LogInformation("Student Contrller,");
             var response = await studentService.GetAllStudentsAsync();
-            return response.ToList();
+            return response.ToList();*/
         }
 
         // GET api/<StudentController>/5

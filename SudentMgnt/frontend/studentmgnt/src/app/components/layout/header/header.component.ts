@@ -4,7 +4,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
-
+import {MatListModule} from '@angular/material/list';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -14,20 +15,20 @@ import { MatMenuModule } from '@angular/material/menu';
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule, MatListModule, RouterLink, RouterLinkActive,
     ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent implements OnInit{
-  
-  @Output() toggleSidebarForMe: EventEmitter<any> = new EventEmitter();
+
+  badgevisible = false;
+  badgevisibility() {
+    this.badgevisible = true;
+  }
 
   ngOnInit(): void {
    // ...
   }
 
-  toggleSidebar() {
-    this.toggleSidebarForMe.emit();
-  }
 }
