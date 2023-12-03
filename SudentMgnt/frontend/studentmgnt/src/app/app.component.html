@@ -1,9 +1,12 @@
-<mat-drawer-container class="flex h-screen">
-    <mat-drawer #drawer mode="side" [opened]="sideBarOpen" class="bg-gray-800" style="min-width: 250px;">
-        <app-sidebar></app-sidebar>
-    </mat-drawer>
-    <mat-drawer-content class="flex flex-col w-full">
-        <app-header (toggleSidebarForMe)="sideBarToggler()"></app-header>
-        <router-outlet class="flex-1 overflow-y-auto p-4"></router-outlet>
-    </mat-drawer-content>
+
+<app-header></app-header>
+<mat-drawer-container autosize>
+  <mat-drawer #drawer opened="true" mode="side" position="start">
+    <app-sidebar></app-sidebar>
+  </mat-drawer>
+  <mat-drawer-content>
+      <div style="text-align: center;min-height: 600px;">
+        <router-outlet></router-outlet>
+      </div>
+  </mat-drawer-content>
 </mat-drawer-container>
