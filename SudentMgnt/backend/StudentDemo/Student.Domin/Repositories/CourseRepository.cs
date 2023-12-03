@@ -1,10 +1,21 @@
-﻿using Student.Application.Interfaces.RepositoryInterfaces;
+﻿using Dapper;
+using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
+using Student.Application.Interfaces.RepositoryInterfaces;
 using Student.Entities.Entities;
 
 namespace Student.Domin.Repositories
 {
     public class CourseRepository : ICourseRepository
     {
+
+        private readonly IConfiguration _configure;
+
+        public CourseRepository(IConfiguration configuration)
+        {
+            _configure = configuration;
+        }
+
         public Task AddCourseAsync(Courses course)
         {
             throw new NotImplementedException();
@@ -15,12 +26,14 @@ namespace Student.Domin.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<List<Students>> GetAllCOursesAsync()
+        public async Task<List<Courses>> GetAllCOursesAsync()
         {
-            throw new NotImplementedException();
+            var connection = new SqlConnection("Server=DESKTOP-N7IPMVA;Database=SMgnt;Trusted_Connection=True;MultipleActiveResultSets=True");
+            var response = await connection.QueryAsync<Courses>("Select * from Courses");
+            return response.ToList();
         }
 
-        public Task<Students> GetCourseByIdAsync(Guid Id)
+        public Task<Courses> GetCourseByIdAsync(Guid Id)
         {
             throw new NotImplementedException();
         }

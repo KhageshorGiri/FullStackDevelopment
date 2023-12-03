@@ -1,4 +1,6 @@
-﻿using Student.Application.Dtos;
+﻿using AutoMapper;
+using Student.Application.Dtos;
+using Student.Application.Interfaces.RepositoryInterfaces;
 using Student.Application.Interfaces.ServiceInterfaces;
 using Student.Entities.Entities;
 
@@ -6,6 +8,15 @@ namespace Student.Application.Services
 {
     public class CourseService : ICourse
     {
+        private readonly ICourseRepository _courseRepository;
+        private readonly IMapper _mapper;
+
+        public CourseService(ICourseRepository courseRepository, IMapper mapper)
+        {
+            _courseRepository = courseRepository;
+            _mapper = mapper;
+        }
+
         public Task AddCourseAsync(CreateCourseDto course)
         {
             throw new NotImplementedException();
@@ -16,9 +27,10 @@ namespace Student.Application.Services
             throw new NotImplementedException();
         }
 
-        public Task<List<CourseDto>> GetAllCOursesAsync()
+        public async Task<List<CourseDto>> GetAllCOursesAsync()
         {
-            throw new NotImplementedException();
+            var response = await _courseRepository.GetAllCOursesAsync();
+            return _mapper.Map<List<CourseDto>>(response);
         }
 
         public Task<CourseDto> GetCourseByIdAsync(Guid Id)
