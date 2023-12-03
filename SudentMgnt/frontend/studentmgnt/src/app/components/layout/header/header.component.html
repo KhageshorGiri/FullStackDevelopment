@@ -2,39 +2,12 @@
   <button mat-icon-button>
       <mat-icon>menu</mat-icon>
   </button>
-  <span>Material UI Tutorial</span>
+  <span>Student Management System</span>
   <span class="example-spacer"></span>
-  <button routerLink="" mat-button>Home</button>
-  <button  mat-button>Master</button>
-  <mat-menu #lvl1master="matMenu">
-      <button  mat-menu-item>Company</button>
-      <button  mat-menu-item>Customer</button>
-      <button  mat-menu-item>Product</button>
-  </mat-menu>
-
-  <mat-menu #company="matMenu">
-      <button mat-menu-item>Term</button>
-      <button mat-menu-item>Tax</button>
-      <button mat-menu-item>Currency</button>
-  </mat-menu>
-  <mat-menu #customer="matMenu">
-      <button mat-menu-item>Type</button>
-      <button mat-menu-item>Tax</button>
-  </mat-menu>
-  <mat-menu #product="matMenu">
-      <button mat-menu-item>Category</button>
-      <button mat-menu-item>Variant</button>
-      <button mat-menu-item>UOM</button>
-  </mat-menu>
-
-  <mat-menu #variant="matMenu">
-      <button mat-menu-item>Color</button>
-      <button mat-menu-item>Size</button>
-  </mat-menu>
-
-  <button routerLink="input" mat-button>Input</button>
-  <button routerLink="autocomplete" mat-button>Autocomplete</button>
-  <a href="#" mat-raised-button color="accent">Join Us</a>
+  <button routerLink="" routerLinkActive="active-link" ariaCurrentWhenActive="page" mat-button>Home</button>
+  <button routerLink="/students" routerLinkActive="active-link" ariaCurrentWhenActive="page" mat-button>Students</button>
+  <button routerLink="" routerLinkActive="active-link" ariaCurrentWhenActive="page" mat-button>Courses</button>
+  <!-- <a href="#" mat-raised-button color="accent">Join Us</a> -->
   <button (click)="badgevisibility()"  mat-icon-button>
       <mat-icon matBadgeColor="accent" matBadge="15"  matBadgeSize="small">notifications</mat-icon>
   </button>

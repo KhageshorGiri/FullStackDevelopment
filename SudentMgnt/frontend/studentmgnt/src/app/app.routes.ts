@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
 import { DashbordComponent } from './components/dashbord/dashbord.component';
-import { ProductComponent } from './components/product/product.component';
+import { StudentsComponent } from './components/students/students.component';
 
 export const routes: Routes = [
     { path: '', component: DashbordComponent },
-    { path: 'products', component: ProductComponent },
+    { path: 'students', component: StudentsComponent },
 ]
 
 
