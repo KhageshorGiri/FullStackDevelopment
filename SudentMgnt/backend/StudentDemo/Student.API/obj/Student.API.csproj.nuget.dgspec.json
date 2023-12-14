@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sam\\Desktop\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.API\\Student.API.csproj": {}
+    "E:\\Binod\\FullStack\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.API\\Student.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sam\\Desktop\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.API\\Student.API.csproj": {
+    "E:\\Binod\\FullStack\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.API\\Student.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sam\\Desktop\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.API\\Student.API.csproj",
+        "projectUniqueName": "E:\\Binod\\FullStack\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.API\\Student.API.csproj",
         "projectName": "Student.API",
-        "projectPath": "C:\\Users\\sam\\Desktop\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.API\\Student.API.csproj",
-        "packagesPath": "C:\\Users\\sam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sam\\Desktop\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.API\\obj\\",
+        "projectPath": "E:\\Binod\\FullStack\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.API\\Student.API.csproj",
+        "packagesPath": "C:\\Users\\asndp\\.nuget\\packages\\",
+        "outputPath": "E:\\Binod\\FullStack\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.API\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\sam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\asndp\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,11 +31,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\sam\\Desktop\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Domin\\Student.Domin.csproj": {
-                "projectPath": "C:\\Users\\sam\\Desktop\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Domin\\Student.Domin.csproj"
+              "E:\\Binod\\FullStack\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Domin\\Student.Domin.csproj": {
+                "projectPath": "E:\\Binod\\FullStack\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Domin\\Student.Domin.csproj"
               },
-              "C:\\Users\\sam\\Desktop\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Entities\\Student.Entities.csproj": {
-                "projectPath": "C:\\Users\\sam\\Desktop\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Entities\\Student.Entities.csproj"
+              "E:\\Binod\\FullStack\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Entities\\Student.Entities.csproj": {
+                "projectPath": "E:\\Binod\\FullStack\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Entities\\Student.Entities.csproj"
               }
             }
           }
@@ -93,21 +96,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\sam\\Desktop\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Application\\Student.Application.csproj": {
+    "E:\\Binod\\FullStack\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Application\\Student.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sam\\Desktop\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Application\\Student.Application.csproj",
+        "projectUniqueName": "E:\\Binod\\FullStack\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Application\\Student.Application.csproj",
         "projectName": "Student.Application",
-        "projectPath": "C:\\Users\\sam\\Desktop\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Application\\Student.Application.csproj",
-        "packagesPath": "C:\\Users\\sam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sam\\Desktop\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Application\\obj\\",
+        "projectPath": "E:\\Binod\\FullStack\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Application\\Student.Application.csproj",
+        "packagesPath": "C:\\Users\\asndp\\.nuget\\packages\\",
+        "outputPath": "E:\\Binod\\FullStack\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\sam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\asndp\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -121,8 +127,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\sam\\Desktop\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Entities\\Student.Entities.csproj": {
-                "projectPath": "C:\\Users\\sam\\Desktop\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Entities\\Student.Entities.csproj"
+              "E:\\Binod\\FullStack\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Entities\\Student.Entities.csproj": {
+                "projectPath": "E:\\Binod\\FullStack\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Entities\\Student.Entities.csproj"
               }
             }
           }
@@ -170,21 +176,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\sam\\Desktop\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Domin\\Student.Domin.csproj": {
+    "E:\\Binod\\FullStack\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Domin\\Student.Domin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sam\\Desktop\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Domin\\Student.Domin.csproj",
+        "projectUniqueName": "E:\\Binod\\FullStack\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Domin\\Student.Domin.csproj",
         "projectName": "Student.Domin",
-        "projectPath": "C:\\Users\\sam\\Desktop\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Domin\\Student.Domin.csproj",
-        "packagesPath": "C:\\Users\\sam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sam\\Desktop\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Domin\\obj\\",
+        "projectPath": "E:\\Binod\\FullStack\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Domin\\Student.Domin.csproj",
+        "packagesPath": "C:\\Users\\asndp\\.nuget\\packages\\",
+        "outputPath": "E:\\Binod\\FullStack\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Domin\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\sam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\asndp\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -198,11 +207,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\sam\\Desktop\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Application\\Student.Application.csproj": {
-                "projectPath": "C:\\Users\\sam\\Desktop\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Application\\Student.Application.csproj"
+              "E:\\Binod\\FullStack\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Application\\Student.Application.csproj": {
+                "projectPath": "E:\\Binod\\FullStack\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Application\\Student.Application.csproj"
               },
-              "C:\\Users\\sam\\Desktop\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Entities\\Student.Entities.csproj": {
-                "projectPath": "C:\\Users\\sam\\Desktop\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Entities\\Student.Entities.csproj"
+              "E:\\Binod\\FullStack\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Entities\\Student.Entities.csproj": {
+                "projectPath": "E:\\Binod\\FullStack\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Entities\\Student.Entities.csproj"
               }
             }
           }
@@ -256,21 +265,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\sam\\Desktop\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Entities\\Student.Entities.csproj": {
+    "E:\\Binod\\FullStack\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Entities\\Student.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sam\\Desktop\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Entities\\Student.Entities.csproj",
+        "projectUniqueName": "E:\\Binod\\FullStack\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Entities\\Student.Entities.csproj",
         "projectName": "Student.Entities",
-        "projectPath": "C:\\Users\\sam\\Desktop\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Entities\\Student.Entities.csproj",
-        "packagesPath": "C:\\Users\\sam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sam\\Desktop\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Entities\\obj\\",
+        "projectPath": "E:\\Binod\\FullStack\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Entities\\Student.Entities.csproj",
+        "packagesPath": "C:\\Users\\asndp\\.nuget\\packages\\",
+        "outputPath": "E:\\Binod\\FullStack\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.Entities\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\sam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\asndp\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -311,7 +323,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

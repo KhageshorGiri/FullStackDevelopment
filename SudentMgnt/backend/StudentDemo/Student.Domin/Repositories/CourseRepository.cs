@@ -28,7 +28,7 @@ namespace Student.Domin.Repositories
 
         public async Task<List<Courses>> GetAllCOursesAsync()
         {
-            var connection = new SqlConnection("Server=DESKTOP-N7IPMVA;Database=SMgnt;Trusted_Connection=True;MultipleActiveResultSets=True");
+            var connection = new SqlConnection("Server=DESKTOP-OA4FHOO\\SQLEXPRESS;Database=SMgnt;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True;");
             var response = await connection.QueryAsync<Courses>("Select * from Courses");
             return response.ToList();
         }
