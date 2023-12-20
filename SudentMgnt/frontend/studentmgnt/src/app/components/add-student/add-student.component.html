@@ -1,0 +1,33 @@
+<div class="container">
+    <form [formGroup]="addStudentForm" (ngSubmit)= "onFormSubmit($event)">
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="form-label">Full Name</label>
+                    <input class="form-control" type="text" formControlName="fullName"/>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="form-label">Date of Birth</label>
+                    <input class="form-control" type="date" formControlName="birthDate"/>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="form-label">Faculty</label>
+                    <select class="form-control" id="faculty" formControlName="faculty" type="text">
+                        <option value="" disabled selected>Select a Faculty</option>
+                        <option value="engineering">Engineering</option>
+                        <option value="science">Science</option>
+                        <option value="arts">Arts</option>
+                        <!-- Add more options as needed -->
+                      </select>
+                </div>
+            </div>
+        </div>
+        <div class="mt-4">
+            <button class="btn btn-success" >Add Student</button>
+        </div>
+    </form>
+</div>

@@ -10,4 +10,11 @@ export class StudentService{
         return students;
     }
 
+    getStudentById(Id:number){
+        // ...
+    }
+
+    addStudent(newStudent:any){
+        console.log(newStudent);
+    }
 }

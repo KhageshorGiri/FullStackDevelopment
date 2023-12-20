@@ -1,3 +1,9 @@
+
+<div class="container">
+    <button class="btn btn-info" routerLink="/add-student" routerLinkActive="active" >Add New Student</button>
+</div>
+
+
 <div class="mx-auto" style="margin-top: 1.5rem;">
     <mat-form-field>
         <mat-label>Filter</mat-label>
@@ -34,7 +40,7 @@
             <ng-container matColumnDef="action">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
                 <td mat-cell *matCellDef="let row">
-                    <button routerLink="/student-detail" routerLinkActive="active" ariaCurrentWhenActive="page">Details</button>
+                    <button class="btn btn-primary" routerLink="/student-detail" routerLinkActive="active" ariaCurrentWhenActive="page">Details</button>
                    
                   </td>
             </ng-container>

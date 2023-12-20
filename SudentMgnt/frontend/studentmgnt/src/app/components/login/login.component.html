@@ -1,0 +1,38 @@
+<div class=container>
+    <div class="row col-md-12">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="card shadow p-3">
+                <div class="card-body">
+                    <form [formGroup]="loginForm" (ngSubmit)="onLogin($event)">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Username" type="email" formControlName="userName" required />
+                                </div>
+                            </div>
+                            <div class="col-md-12 mt-3">
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Password" type="password" formControlName="password" required />
+                                </div>
+                            </div>
+                            <div class="col-md-12 mt-4">
+                                <div class="form-group">
+                                    <button class="btn btn-info">Login</button>
+                                </div>
+                            </div>
+                            <div class="col-md-12 mt-2">
+                                <div class="form-group">
+                                    <p class="text-info">Do not have user account? <br />
+                                        <a routerLink="/register" routerLinkActive="active"><b>Create New</b></a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
