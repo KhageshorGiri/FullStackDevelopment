@@ -7,7 +7,7 @@ namespace Student.Application.Interfaces.ServiceInterfaces
     {
         Task<List<StudentDto>> GetAllStudentsAsync();
         Task<StudentDto> GetStudentByIdAsync(Guid Id);
-        Task AddStudentAsync(CreateStudnetDto student);
+        Task AddStudentAsync(CreateStudentDto student);
         Task UpdateStudentAsync(UpdateStudentDto student);
         Task DeleteStudentAsync(Guid Id);
     }

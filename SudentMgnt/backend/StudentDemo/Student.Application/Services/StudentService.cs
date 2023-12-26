@@ -16,7 +16,7 @@ namespace Student.Application.Services
             this._mapper = mapper;
         }
 
-        public Task AddStudentAsync(CreateStudnetDto student)
+        public Task AddStudentAsync(CreateStudentDto student)
         {
             throw new NotImplementedException();
         }

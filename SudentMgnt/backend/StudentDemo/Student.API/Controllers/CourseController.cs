@@ -26,15 +26,16 @@ namespace Student.API.Controllers
 
         // GET api/<CourseController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<CourseDto> Get(Guid id)
         {
-            return "value";
+            return await courseService.GetCourseByIdAsync(id);
         }
 
         // POST api/<CourseController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task Post([FromBody] CreateCourseDto newCourse)
         {
+            await courseService.AddCourseAsync(newCourse);
         }
 
         // PUT api/<CourseController>/5

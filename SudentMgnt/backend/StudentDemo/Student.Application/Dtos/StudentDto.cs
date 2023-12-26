@@ -20,7 +20,7 @@ namespace Student.Application.Dtos
         public string Faculty { get; set; } = string.Empty;
     }
 
-    public class CreateStudnetDto
+    public class CreateStudentDto
     {
         [Required(ErrorMessage = "Student Name Cannot be Null or Empty.")]
         [StringLength(250, ErrorMessage = "Student Name Should be of 250 Characters.")]

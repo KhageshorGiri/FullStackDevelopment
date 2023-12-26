@@ -16,9 +16,23 @@ namespace Student.Domin.Repositories
             _configure = configuration;
         }
 
-        public Task AddCourseAsync(Courses course)
+        public async Task AddCourseAsync(Courses course)
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection("Server=DESKTOP-OA4FHOO\\SQLEXPRESS;Database=SMgnt;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True;"))
+            {
+                connection.Open();
+                
+                // Parameterized SQL query for insertion
+                var insertQuery = "INSERT INTO Courses (CourseId, CourseTitle, CourseDescription) VALUES (@CourseId, @CourseTitle, @CourseDescription)";
+
+                // Execute the insert query
+                await connection.ExecuteAsync(insertQuery, new
+                {
+                    course.CourseId,
+                    course.CourseTitle,
+                    course.CourseDescription
+                });
+            }
         }
 
         public Task DeleteCourseAsync(Guid Id)
@@ -33,10 +47,16 @@ namespace Student.Domin.Repositories
             return response.ToList();
         }
 
-        public Task<Courses> GetCourseByIdAsync(Guid Id)
+        public async Task<Courses> GetCourseByIdAsync(Guid Id)
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection("Server=DESKTOP-OA4FHOO\\SQLEXPRESS;Database=SMgnt;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True;"))
+            {
+                connection.Open();
+                var response = await connection.QueryFirstOrDefaultAsync<Courses>("SELECT * FROM Courses WHERE CourseId = @CourseId", new { CourseId = Id });
+                return response;
+            }
         }
+
 
         public Task UpdateCourseAsync(Courses course)
         {
