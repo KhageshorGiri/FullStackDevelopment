@@ -7,7 +7,7 @@ export class AuthService{
  
     // register service method
     registerUser(newUser: any){
-        // todo
+        console.log(newUser);
     }
 
     //login service method
