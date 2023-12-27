@@ -1,51 +1,89 @@
-﻿using Student.Application.Interfaces.RepositoryInterfaces;
+﻿using Dapper;
+using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
+using Student.Application.Interfaces.RepositoryInterfaces;
+using Student.Application.Interfaces.ServiceInterfaces;
 using Student.Entities.Entities;
 
 namespace Student.Domin.Repositories
 {
     public class StudentRepository : IStudentRepository
     {
-        public Task AddStudentAsync(Students student)
+
+        private readonly IConfiguration _configure;
+
+        public StudentRepository(IConfiguration configuration)
         {
-            throw new NotImplementedException();
+            _configure = configuration;
         }
 
-        public Task DeleteStudentAsync(Guid Id)
+        public async Task AddStudentAsync(Students newStudent)
         {
-            throw new NotImplementedException();
-        }
+            using (var connection = new SqlConnection(_configure.GetConnectionString("Default")))
+            {
+                connection.Open();
 
-        public Task<List<Students>> GetAllStudentsAsync()
-        {
+                // Parameterized SQL query for insertion
+                var insertQuery = "INSERT INTO Students (StudentId, FullName, Faculty) VALUES (@StudentId, @FullName, @Faculty)";
 
-            // Create a list of Student with temporary data
-            List<Students> studentList = new List<Students>
+                // Execute the insert query
+                await connection.ExecuteAsync(insertQuery, new
                 {
-                    new Students
-                    {
-                        StudentId = Guid.NewGuid(),
-                        FullName = "John Doe",
-                        Faculty = "Computer Science"
-                    },
-                    new Students
-                    {
-                        StudentId = Guid.NewGuid(),
-                        FullName = "Jane Doe",
-                        Faculty = "Mathematics"
-                    },
-                    // Add more students as needed
-                };
-            return Task.FromResult(studentList);
+                    newStudent.StudentId,
+                    newStudent.FullName,
+                    newStudent.Faculty
+                });
+            }
         }
 
-        public Task<Students> GetStudentByIdAsync(Guid Id)
+        public async Task DeleteStudentAsync(Guid Id)
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection(_configure.GetConnectionString("Default")))
+            {
+                connection.Open();
+
+                // Parameterized SQL query for deletion
+                var deleteQuery = "DELETE FROM Students WHERE StudentId = @StudentId";
+
+                // Execute the delete query
+                await connection.ExecuteAsync(deleteQuery, new { StudentId = Id });
+            }
         }
 
-        public Task UpdateStudentAsync(Students student)
+        public async Task<List<Students>> GetAllStudentsAsync()
         {
-            throw new NotImplementedException();
+
+            var connection = new SqlConnection(_configure.GetConnectionString("Default"));
+            var allstudents = await connection.QueryAsync<Students>("Select * from Students");
+            return allstudents.ToList();
+        }
+
+        public async Task<Students> GetStudentByIdAsync(Guid Id)
+        {
+            using (var connection = new SqlConnection(_configure.GetConnectionString("Default")))
+            {
+                connection.Open();
+                var response = await connection.QueryFirstOrDefaultAsync<Students>("SELECT * FROM Students WHERE StudentId = @StudentId", new { StudentId = Id });
+                return response!;
+            }
+        }
+
+        public async Task UpdateStudentAsync(Guid Id,Students existingStudent)
+        {
+            using (var connection = new SqlConnection(_configure.GetConnectionString("Default")))
+            {
+                connection.Open();
+                // Parameterized SQL query for update
+                var updateQuery = "UPDATE Students SET FullName = @FullName, Faculty = @Faculty WHERE StudentId = @StudentId";
+
+                // Execute the update query
+                await connection.ExecuteAsync(updateQuery, new
+                {
+                    FullName = existingStudent?.FullName,
+                    Faculty = existingStudent?.Faculty,
+                    StudentId = Id,
+                });
+            }
         }
     }
 }

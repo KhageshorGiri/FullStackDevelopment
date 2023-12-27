@@ -7,7 +7,7 @@ namespace Student.Application.Interfaces.RepositoryInterfaces
         Task<List<Students>> GetAllStudentsAsync();
         Task<Students> GetStudentByIdAsync(Guid Id);
         Task AddStudentAsync(Students student);
-        Task UpdateStudentAsync(Students student);
+        Task UpdateStudentAsync(Guid Id, Students student);
         Task DeleteStudentAsync(Guid Id);
     }
 }

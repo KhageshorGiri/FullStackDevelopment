@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Student.Application.Dtos;
 using Student.Application.Interfaces.ServiceInterfaces;
 
@@ -11,48 +12,65 @@ namespace Student.API.Controllers
     public class StudentController : ControllerBase
     {
         private readonly IStudent studentService;
-        private readonly ILogger _logger;
+        //private readonly ILogger _logger;
 
-        public StudentController(IStudent student, ILogger logger)
+        public StudentController(IStudent student, IMapper mapper)
         {
             studentService = student;
-            _logger = logger;
         }
 
         // GET: api/<StudentController>
         [HttpGet]
         public async Task<IEnumerable<StudentDto>> Get()
         {
-            throw new NotImplementedException();
-
-           /* _logger.LogInformation("Student Contrller,");
+            //_logger.LogInformation("Student Contrller,");
             var response = await studentService.GetAllStudentsAsync();
-            return response.ToList();*/
+            return response.ToList();
         }
 
         // GET api/<StudentController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<IActionResult> Get(Guid id)
         {
-            return "value";
+            var existingStudent = await studentService.GetStudentByIdAsync(id);
+            if(existingStudent == null)
+            {
+                return NotFound();
+            }
+            return Ok(existingStudent);
         }
 
         // POST api/<StudentController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async void Post([FromBody] CreateStudentDto newStudent)
         {
+            await studentService.AddStudentAsync(newStudent);
         }
 
         // PUT api/<StudentController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut("{Id}")]
+        public async Task<IActionResult> Put(Guid Id, [FromBody] UpdateStudentDto existingStudent)
         {
+            var student = await studentService.GetStudentByIdAsync(Id);
+            if (student == null)
+            {
+                return NotFound();
+            }
+            await studentService.UpdateStudentAsync(Id, existingStudent);
+            return Ok();
         }
 
         // DELETE api/<StudentController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete("{Id}")]
+        public async Task<IActionResult> Delete(Guid Id)
         {
+            var student = await studentService.GetStudentByIdAsync(Id);
+            if (student == null)
+            {
+                return NotFound();
+            }
+            await studentService.DeleteStudentAsync(Id);
+            return Ok();
         }
     }
 }

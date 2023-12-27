@@ -2,45 +2,49 @@
 using Student.Application.Dtos;
 using Student.Application.Interfaces.RepositoryInterfaces;
 using Student.Application.Interfaces.ServiceInterfaces;
+using Student.Entities.Entities;
 
 namespace Student.Application.Services
 {
     public class StudentService : IStudent
     {
-        private readonly IStudentRepository studentRepository;
+        private readonly IStudentRepository _studentRepository;
         private readonly IMapper _mapper;
 
         public StudentService(IStudentRepository studentRepository, IMapper mapper)
         {
-            this.studentRepository = studentRepository;
+            this._studentRepository = studentRepository;
             this._mapper = mapper;
         }
 
-        public Task AddStudentAsync(CreateStudentDto student)
+        public async Task AddStudentAsync(CreateStudentDto newStudent)
         {
-            throw new NotImplementedException();
+            var mappedStudent = _mapper.Map<Students>(newStudent);
+            await _studentRepository.AddStudentAsync(mappedStudent);
         }
 
-        public Task DeleteStudentAsync(Guid Id)
+        public async Task DeleteStudentAsync(Guid Id)
         {
-            throw new NotImplementedException();
+            await _studentRepository.DeleteStudentAsync(Id);
         }
 
         public async Task<List<StudentDto>> GetAllStudentsAsync()
         {
-            var allStudents_source = await studentRepository.GetAllStudentsAsync();
+            var allStudents_source = await _studentRepository.GetAllStudentsAsync();
             var allStudent_final = _mapper.Map<List<StudentDto>>(allStudents_source);
             return allStudent_final;
         }
 
-        public Task<StudentDto> GetStudentByIdAsync(Guid Id)
+        public async Task<StudentDto> GetStudentByIdAsync(Guid Id)
         {
-            throw new NotImplementedException();
+            var existingStudent = await _studentRepository.GetStudentByIdAsync(Id);
+            return _mapper.Map<StudentDto>(existingStudent);
         }
 
-        public Task UpdateStudentAsync(UpdateStudentDto student)
+        public async Task UpdateStudentAsync(Guid Id, UpdateStudentDto student)
         {
-            throw new NotImplementedException();
+            var mappedStudent = _mapper.Map<Students>(student);
+            await _studentRepository.UpdateStudentAsync(Id, mappedStudent);
         }
     }
 }

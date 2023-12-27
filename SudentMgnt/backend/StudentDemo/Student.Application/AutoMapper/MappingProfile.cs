@@ -15,11 +15,16 @@ namespace Student.Application.AutoMapper
                 .ForMember(dest => dest.FullName, opt => opt.MapFrom(src => src.FullName))
                 .ForMember(dest => dest.Faculty, opt => opt.MapFrom(src => src.Faculty));
 
+            CreateMap<Students, StudentDto>();
+
             // Mapping from CreateStudentDto to Students
             CreateMap<CreateStudentDto, Students>()
                 .ForMember(dest => dest.StudentId, opt => opt.MapFrom(src => Guid.NewGuid())) // Assuming you generate a new GUID for each new student
                 .ForMember(dest => dest.FullName, opt => opt.MapFrom(src => src.FullName))
                 .ForMember(dest => dest.Faculty, opt => opt.MapFrom(src => src.Faculty));
+
+            // Update student dto to student
+            CreateMap<UpdateStudentDto, Students>();
 
 
             // Mapping from Courses to CoursesDto
