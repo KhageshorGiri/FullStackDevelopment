@@ -23,9 +23,9 @@ namespace Student.Application.Services
             await _courseRepository.AddCourseAsync(newCourse);
         }
 
-        public Task DeleteCourseAsync(Guid Id)
+        public async Task DeleteCourseAsync(Guid Id)
         {
-            throw new NotImplementedException();
+            await _courseRepository.DeleteCourseAsync(Id);
         }
 
         public async Task<List<CourseDto>> GetAllCOursesAsync()
@@ -40,9 +40,10 @@ namespace Student.Application.Services
             return _mapper.Map<CourseDto>(course);
         }
 
-        public Task UpdateCourseAsync(UpdateCourseDto course)
+        public async Task UpdateCourseAsync(Guid Id, UpdateCourseDto existingCourse)
         {
-            throw new NotImplementedException();
+            var course = _mapper.Map<Courses>(existingCourse);
+            await _courseRepository.UpdateCourseAsync(Id, course);
         }
     }
 }

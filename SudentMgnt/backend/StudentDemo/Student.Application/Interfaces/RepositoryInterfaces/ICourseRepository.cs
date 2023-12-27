@@ -7,7 +7,7 @@ namespace Student.Application.Interfaces.RepositoryInterfaces
         Task<List<Courses>> GetAllCOursesAsync();
         Task<Courses> GetCourseByIdAsync(Guid Id);
         Task AddCourseAsync(Courses course);
-        Task UpdateCourseAsync(Courses course);
+        Task UpdateCourseAsync(Guid Id, Courses course);
         Task DeleteCourseAsync(Guid Id);
     }
 }

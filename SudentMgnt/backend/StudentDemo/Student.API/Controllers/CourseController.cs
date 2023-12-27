@@ -40,14 +40,27 @@ namespace Student.API.Controllers
 
         // PUT api/<CourseController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task<IActionResult> Put(Guid id, [FromBody] UpdateCourseDto course)
         {
+            var existingCourse = await courseService.GetCourseByIdAsync(id);
+            if (existingCourse == null)
+            {
+                return NotFound();
+            }
+            await courseService.UpdateCourseAsync(id, course);
+            return Ok();
         }
 
         // DELETE api/<CourseController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<IActionResult> Delete(Guid id)
         {
+            var existingCourse = await courseService.GetCourseByIdAsync(id);
+            if(existingCourse == null) {
+                return NotFound();
+            }
+            await courseService.DeleteCourseAsync(id);
+            return Ok();
         }
     }
 }

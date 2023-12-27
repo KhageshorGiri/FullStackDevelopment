@@ -8,7 +8,7 @@ namespace Student.Application.Interfaces.ServiceInterfaces
         Task<List<CourseDto>> GetAllCOursesAsync();
         Task<CourseDto> GetCourseByIdAsync(Guid Id);
         Task AddCourseAsync(CreateCourseDto course);
-        Task UpdateCourseAsync(UpdateCourseDto course);
+        Task UpdateCourseAsync(Guid Id, UpdateCourseDto course);
         Task DeleteCourseAsync(Guid Id);
     }
 }
