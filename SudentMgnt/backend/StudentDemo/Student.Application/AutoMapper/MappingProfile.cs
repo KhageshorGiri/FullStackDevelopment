@@ -25,6 +25,9 @@ namespace Student.Application.AutoMapper
             // Mapping from Courses to CoursesDto
             CreateMap<Courses, CourseDto>();
 
+            // updatedto to course
+            CreateMap<UpdateCourseDto, Courses>();
+
             // Mapping from CoursesDto to courses
             CreateMap<CreateCourseDto, Courses>()
                 .ForMember(m => m.CourseId, opt => opt.MapFrom(src=> Guid.NewGuid()));

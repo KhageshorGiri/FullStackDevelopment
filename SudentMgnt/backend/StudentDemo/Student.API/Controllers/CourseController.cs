@@ -53,14 +53,14 @@ namespace Student.API.Controllers
 
         // DELETE api/<CourseController>/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(Guid id)
+        public async Task Delete(Guid id)
         {
             var existingCourse = await courseService.GetCourseByIdAsync(id);
-            if(existingCourse == null) {
-                return NotFound();
+            if (existingCourse == null)
+            {
+                throw new ArgumentNullException("Can not found expected courese.");
             }
             await courseService.DeleteCourseAsync(id);
-            return Ok();
         }
     }
 }

@@ -64,7 +64,7 @@ namespace Student.Domin.Repositories
             {
                 connection.Open();
                 var response = await connection.QueryFirstOrDefaultAsync<Courses>("SELECT * FROM Courses WHERE CourseId = @CourseId", new { CourseId = Id });
-                return response;
+                return response!;
             }
         }
 
@@ -81,9 +81,9 @@ namespace Student.Domin.Repositories
                 // Execute the update query
                 await connection.ExecuteAsync(updateQuery, new
                 {
-                    CourseTitle = Id,
+                    CourseTitle = updatedCourse?.CourseTitle,
                     CourseDescription = updatedCourse?.CourseDescription,
-                    CourseId = updatedCourse?.CourseId,
+                    CourseId = Id,
                 });
             }
 
