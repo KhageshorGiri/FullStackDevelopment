@@ -38,6 +38,8 @@ try
     builder.Services.AddScoped<ICourse, CourseService>();
     builder.Services.AddScoped<IStudentRepository, StudentRepository>();
     builder.Services.AddScoped<ICourseRepository, CourseRepository>();
+    builder.Services.AddScoped<IEnroll, Enrollservice>();
+    builder.Services.AddScoped<IEnrollRepository, EnrollRepository>();
 
     var app = builder.Build();
 
