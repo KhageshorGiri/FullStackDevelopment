@@ -6,7 +6,9 @@ using Student.Application.Interfaces.RepositoryInterfaces;
 using Student.Application.Interfaces.ServiceInterfaces;
 using Student.Application.Services;
 using Student.Domin.DataContext;
+using Student.Domin.GenericClasses;
 using Student.Domin.Repositories;
+using Student.Entities.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -39,6 +41,7 @@ try
     builder.Services.AddScoped<IStudentRepository, StudentRepository>();
     builder.Services.AddScoped<ICourseRepository, CourseRepository>();
     builder.Services.AddScoped<IEnroll, Enrollservice>();
+    builder.Services.AddScoped<IBaseRepository<BaseEntity>, BaseRepository<BaseEntity>>();
     builder.Services.AddScoped<IEnrollRepository, EnrollRepository>();
 
     var app = builder.Build();

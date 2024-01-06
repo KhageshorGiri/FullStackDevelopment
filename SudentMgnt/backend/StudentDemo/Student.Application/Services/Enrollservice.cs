@@ -1,33 +1,51 @@
-﻿using Student.Application.Dtos;
+﻿using AutoMapper;
+using Student.Application.Dtos;
+using Student.Application.Interfaces.RepositoryInterfaces;
 using Student.Application.Interfaces.ServiceInterfaces;
+using Student.Entities.Entities;
 
 namespace Student.Application.Services
 {
     public class Enrollservice : IEnroll
     {
-        public Task AddEnrollAsync(EnrollStudentDto course)
+
+        protected readonly IEnrollRepository _enrollRepository;
+        protected readonly IMapper _mapper;
+
+        public Enrollservice(IEnrollRepository enrollRepository, IMapper mapper)
         {
-            throw new NotImplementedException();
+            _enrollRepository = enrollRepository;
+            _mapper = mapper;
         }
 
-        public Task DeleteEnrollAsync(Guid Id)
+        public async Task AddEnrollAsync(EnrollStudentDto course)
         {
-            throw new NotImplementedException();
+            var mappedValue = _mapper.Map<Enroll>(course);
+             await _enrollRepository.AddAsync(mappedValue);
         }
 
-        public Task<List<EnrollDto>> GetAllEnrollListAsync()
+        public async Task DeleteEnrollAsync(Guid Id)
         {
-            throw new NotImplementedException();
+            var existingValue = GetEnrollByIdAsync(Id);
+            await _enrollRepository.DeleteAsync(_mapper.Map<Enroll>(existingValue));
         }
 
-        public Task<EnrollDto> GetEnrollByIdAsync(Guid Id)
+        public async Task<List<EnrollDto>> GetAllEnrollListAsync()
         {
-            throw new NotImplementedException();
+            var enrollDetails = await _enrollRepository.GetAllAsync();
+            return _mapper.Map<List<EnrollDto>>(enrollDetails);
         }
 
-        public Task UpdateEnrollAsync(Guid Id, UpdateEnrollDto course)
+        public async Task<EnrollDto> GetEnrollByIdAsync(Guid Id)
         {
-            throw new NotImplementedException();
+            var existing = await _enrollRepository.GetEnrollByIdAsync(Id);
+            return _mapper.Map<EnrollDto>(existing);
+        }
+
+        public async Task UpdateEnrollAsync(Guid Id, UpdateEnrollDto course)
+        {
+            var existingValue = GetEnrollByIdAsync(Id);
+            await _enrollRepository.UpdateAsync(_mapper.Map<Enroll>(existingValue));
         }
     }
 }

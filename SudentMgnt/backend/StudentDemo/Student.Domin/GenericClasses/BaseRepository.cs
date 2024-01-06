@@ -5,45 +5,45 @@ using Student.Entities.Entities;
 
 namespace Student.Domin.GenericClasses
 {
-    internal interface IBaseRepository<TEntity> where TEntity : BaseEntity
+    public interface IBaseRepository<TEntity> where TEntity : BaseEntity
     {
-        void AddAsync(TEntity newEntity);
-        void DeleteAsync(TEntity existingEntity);
-        List<TEntity> GetAll();
-        void UpdateAsync(TEntity existingEntity);
+        Task AddAsync(TEntity newEntity);
+        Task DeleteAsync(TEntity existingEntity);
+        Task<List<TEntity>> GetAllAsync();
+        Task UpdateAsync(TEntity existingEntity);
     }
 
-    internal abstract class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : BaseEntity
+    public abstract class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : BaseEntity
     {
 
         protected readonly StudentDbContext _dbContext;
 
-        protected BaseRepository(StudentDbContext dbContext)
+        public BaseRepository(StudentDbContext dbContext)
         {
             _dbContext = dbContext;
         }
 
-        public virtual List<TEntity> GetAll()
+        public virtual async Task<List<TEntity>> GetAllAsync()
         {
-            return _dbContext.Set<TEntity>().ToList();
+            return await _dbContext.Set<TEntity>().ToListAsync();
         }
 
-        public virtual void AddAsync(TEntity newEntity)
+        public virtual async Task AddAsync(TEntity newEntity)
         {
-            _dbContext.Set<TEntity>().Add(newEntity);
+            await _dbContext.Set<TEntity>().AddAsync(newEntity);
             _dbContext.SaveChanges();
         }
 
-        public virtual void UpdateAsync(TEntity existingEntity)
+        public virtual async Task UpdateAsync(TEntity existingEntity)
         {
             _dbContext.Set<TEntity>().Update(existingEntity);
-            _dbContext.SaveChanges();
+           await _dbContext.SaveChangesAsync();
         }
 
-        public virtual void DeleteAsync(TEntity existingEntity)
+        public virtual async Task DeleteAsync(TEntity existingEntity)
         {
             _dbContext.Set<TEntity>().Remove(existingEntity);
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
         }
 
     }

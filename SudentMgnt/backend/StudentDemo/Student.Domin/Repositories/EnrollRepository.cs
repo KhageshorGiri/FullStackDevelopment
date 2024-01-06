@@ -5,7 +5,7 @@ using Student.Entities.Entities;
 
 namespace Student.Domin.Repositories
 {
-    internal sealed class EnrollRepository : BaseRepository<Enroll>, IEnrollRepository
+    public sealed class EnrollRepository : BaseRepository<Enroll>, IEnrollRepository
     {
         public EnrollRepository(StudentDbContext dbContext) 
             : base(dbContext)
