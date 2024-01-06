@@ -4,10 +4,10 @@ namespace Student.Application.Interfaces.RepositoryInterfaces
 {
     public interface IEnrollRepository
     {
-        Task<List<Enroll>> GetAllEnrollListAsync();
+        public List<Enroll> GetAll();
         Task<Enroll> GetEnrollByIdAsync(Guid Id);
-        Task AddEnrollAsync(Enroll course);
-        Task UpdateEnrollAsync(Guid Id, Enroll course);
-        Task DeleteEnrollAsync(Guid Id);
+        public void AddAsync(Enroll enroll);
+        public void UpdateAsync(Enroll enroll);
+        public void DeleteAsync(Enroll enroll);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Student.Entities.Entities
 {
-    public class Enroll
+    public class Enroll : BaseEntity
     {
         [Key]
         public Guid Id { get; set; }

@@ -1,23 +1,15 @@
 ﻿using Student.Application.Interfaces.RepositoryInterfaces;
+using Student.Domin.DataContext;
+using Student.Domin.GenericClasses;
 using Student.Entities.Entities;
 
 namespace Student.Domin.Repositories
 {
-    public class EnrollRepository : IEnrollRepository
+    internal sealed class EnrollRepository : BaseRepository<Enroll>, IEnrollRepository
     {
-        public Task AddEnrollAsync(Enroll course)
+        public EnrollRepository(StudentDbContext dbContext) 
+            : base(dbContext)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task DeleteEnrollAsync(Guid Id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<List<Enroll>> GetAllEnrollListAsync()
-        {
-            throw new NotImplementedException();
         }
 
         public Task<Enroll> GetEnrollByIdAsync(Guid Id)
@@ -25,9 +17,5 @@ namespace Student.Domin.Repositories
             throw new NotImplementedException();
         }
 
-        public Task UpdateEnrollAsync(Guid Id, Enroll course)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
