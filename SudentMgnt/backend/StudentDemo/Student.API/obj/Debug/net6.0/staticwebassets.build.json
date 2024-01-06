@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "twrsg2Ox9R18bHQFkvvf6WjaERiv8ts53ZfgGg5SR8Q=",
+  "Hash": "MUhZ6Mmvhs3bP4ODOjhurulmebXJwA1RtaFvZg6QXrA=",
   "Source": "Student.API",
   "BasePath": "_content/Student.API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Student.API\\wwwroot",
+      "Source": "Student.API",
+      "ContentRoot": "E:\\Binod\\FullStack\\FullStackDevelopment\\SudentMgnt\\backend\\StudentDemo\\Student.API\\wwwroot\\",
+      "BasePath": "_content/Student.API",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }
