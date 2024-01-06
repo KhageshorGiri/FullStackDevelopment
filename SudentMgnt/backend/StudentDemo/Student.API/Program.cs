@@ -41,7 +41,7 @@ try
     builder.Services.AddScoped<IStudentRepository, StudentRepository>();
     builder.Services.AddScoped<ICourseRepository, CourseRepository>();
     builder.Services.AddScoped<IEnroll, Enrollservice>();
-    builder.Services.AddScoped<IBaseRepository<BaseEntity>, BaseRepository<BaseEntity>>();
+    //builder.Services.AddTransient(typeof(IBaseRepository<>), typeof(BaseRepository<>));
     builder.Services.AddScoped<IEnrollRepository, EnrollRepository>();
 
     var app = builder.Build();

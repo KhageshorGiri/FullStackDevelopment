@@ -8,6 +8,6 @@ namespace Student.Application.Interfaces.RepositoryInterfaces
         Task<Enroll> GetEnrollByIdAsync(Guid Id);
         Task AddAsync(Enroll enroll);
         Task UpdateAsync(Enroll enroll);
-        Task DeleteAsync(Enroll enroll);
+        Task DeleteAsync(Guid Id);
     }
 }

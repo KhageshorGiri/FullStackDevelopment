@@ -37,6 +37,13 @@ namespace Student.Application.AutoMapper
             CreateMap<CreateCourseDto, Courses>()
                 .ForMember(m => m.CourseId, opt => opt.MapFrom(src=> Guid.NewGuid()));
 
+            // mapping for enroll
+            CreateMap<EnrollStudentDto, Enroll>()
+               .ForMember(m => m.Id, opt => opt.MapFrom(src => Guid.NewGuid()));
+            CreateMap<Enroll, EnrollDto>();
+            CreateMap<Enroll, UpdateEnrollDto>();
+            CreateMap<EnrollDto, Enroll>();
+            CreateMap<UpdateEnrollDto, Enroll>();
         }
     }
 

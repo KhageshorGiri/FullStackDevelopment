@@ -27,7 +27,7 @@ namespace Student.Application.Services
         public async Task DeleteEnrollAsync(Guid Id)
         {
             var existingValue = GetEnrollByIdAsync(Id);
-            await _enrollRepository.DeleteAsync(_mapper.Map<Enroll>(existingValue));
+            await _enrollRepository.DeleteAsync(Id);
         }
 
         public async Task<List<EnrollDto>> GetAllEnrollListAsync()
