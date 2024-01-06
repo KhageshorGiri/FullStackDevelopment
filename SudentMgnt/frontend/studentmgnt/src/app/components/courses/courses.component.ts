@@ -9,12 +9,13 @@ import {MatIconModule} from '@angular/material/icon';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Course } from '../../core/interfaces/course.interface';
 import { CourseService } from '../../core/services/course.service';
+import { PopupModelComponent } from '../../shared/components/popup-model/popup-model.component';
 
 @Component({
   selector: 'app-courses',
   standalone: true,
   imports: [CommonModule,MatFormFieldModule, MatInputModule, RouterLink, RouterLinkActive,
-    MatTableModule, MatSortModule, MatPaginatorModule, MatIconModule],
+    MatTableModule, MatSortModule, MatPaginatorModule, MatIconModule, PopupModelComponent],
   templateUrl: './courses.component.html',
   styleUrl: './courses.component.scss'
 })
@@ -52,6 +53,12 @@ export class CoursesComponent implements OnInit {
 
 
   //********************************************************
-  // Private Functions 
+  // Public Functions 
   //********************************************************
+
+  addNewCourse(event : Event){
+    event.preventDefault();
+
+
+  }
 }

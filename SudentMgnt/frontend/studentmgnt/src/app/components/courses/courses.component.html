@@ -2,7 +2,7 @@
     <div class="row col-md-12">
         <div>
             <div class="mb-3">
-                <button class="btn btn-info" >Add New Course</button>
+                <button class="btn btn-info" click="addNewCourse($event)">Add New Course</button>
             </div>
             <div class="mat-elevation-z8" style="width: 70%; margin-left: auto; margin-right: auto;">
                 <table mat-table [dataSource]="courseTableDataSource" matSort>
@@ -51,3 +51,4 @@
         </div>
     </div>
 </div>
+
